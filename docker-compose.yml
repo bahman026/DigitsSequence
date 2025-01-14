@@ -12,6 +12,8 @@ services:
             - ./:/var/www/html
         networks:
             - net
+
 networks:
     net:
+        name: sequence_net
         driver: bridge
