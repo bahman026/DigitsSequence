@@ -1,21 +1,11 @@
 # Sequence Project
 
-This project implements a high-performance Sequence number generator using matrix exponentiation. It supports calculation of extremely large Sequence numbers efficiently. The project is developed for **Sheypoor** and is designed to be used in a containerized environment.
+This project implements a high-performance Sequence number generator.
 
-## Features
-- Fast calculation of Sequence numbers using matrix exponentiation.
-- Handles large numbers efficiently with GMP library.
-- Supports command-line interface (CLI) for generating and displaying Sequence numbers.
-- Includes unit tests for ensuring correctness.
-
----
 
 ## Requirements
 - Docker and Docker Compose
-- PHP 8.4 with required extensions
-    - `bcmath`
-    - `zip`
-    - `gmp`
+- PHP 8.4
 - Composer
 
 ---
@@ -53,12 +43,6 @@ php index.php 10000000
 ```
 This command calculates the 10,000,000th Sequence number.
 
-#### Display the Full Number
-To display the full Sequence number (if truncated), use the `--full-number` flag:
-
-```bash
-php index.php 100000 --full-number
-```
 
 ---
 
