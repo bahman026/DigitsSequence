@@ -17,7 +17,7 @@ class DigitsSequence
     }
 
 
-    public static function digitsSequence($number): int
+    public static function digitsSequence($number)
     {
         if (!is_int($number)) {
             throw new InvalidArgumentException("Input must be an integer.");
@@ -31,10 +31,21 @@ class DigitsSequence
         if ($number == 1) return 1;
 
         $sequence = [0, 1];
+        $seen = [];
         $index = 2;
 
         while ($index <= $number) {
             $next = self::digitSum($sequence[$index - 1]) + self::digitSum($sequence[$index - 2]);
+
+            $key = $sequence[$index - 2] . ',' . $sequence[$index - 1];
+            if (isset($seen[$key])) {
+                $cycleStart = $seen[$key];
+                $cycle = array_slice($sequence, $cycleStart);
+                $cycleLength = count($cycle);
+                return $cycle[($number - $cycleStart) % $cycleLength];
+            }
+
+            $seen[$key] = $index - 2;
             $sequence[] = $next;
             $index++;
         }
