@@ -1,6 +1,7 @@
 # Sequence Project
 
 This project implements a high-performance Sequence number generator.
+This algorithm uses cycle detection. If a cycle is found, the time complexity is O(k); if not, it is O(n . log(m)), where n is the input, and m is the largest element.
 
 
 ## Requirements
@@ -47,9 +48,8 @@ This command calculates the 10,000,000th Sequence number.
 ---
 
 ## Technical Details
-- **Time Complexity**: The time complexity of the algorithm is O(n log n).
+- **Time Complexity**: This algorithm uses cycle detection. If a cycle is found, the time complexity is O(k); if not, it is O(n.log m), where n is the input, and m is the largest element.
 - **Space Complexity**: The overall space complexity of this code is O(n).
-- **Libraries**: The project utilizes the GMP library for handling large numbers.
 - **Testing**: PHPUnit is used for unit testing.
 
 ---
