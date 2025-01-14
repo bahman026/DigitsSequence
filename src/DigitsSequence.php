@@ -17,7 +17,7 @@ class DigitsSequence
     }
 
 
-    public static function digitsSequence($number)
+    public static function digitsSequence($number): int
     {
         if (!is_int($number)) {
             throw new InvalidArgumentException("Input must be an integer.");
