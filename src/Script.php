@@ -11,6 +11,6 @@ class Script
         }
         $n = intval($argv[1]);
         $sequenceNumber = DigitsSequence::digitsSequence($n);
-        echo "($n) = " . $sequenceNumber;
+        echo "($n) = " . $sequenceNumber . PHP_EOL;
     }
 }
