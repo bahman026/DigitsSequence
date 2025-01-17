@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+    app:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        image: sequence
+        container_name: sequence_app
+        restart: unless-stopped
+        working_dir: /var/www/html
+        volumes:
+            - ./:/var/www/html
+        networks:
+            - net
+
+networks:
+    net:
+        name: sequence_net
+        driver: bridge
