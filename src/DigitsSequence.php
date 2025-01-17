@@ -19,12 +19,10 @@ class DigitsSequence
 
     public static function digitsSequence($number)
     {
-        // بررسی نوع داده ورودی
         if (!is_int($number)) {
             throw new InvalidArgumentException("Input must be an integer.");
         }
 
-        // بررسی مقدار منفی
         if ($number < 0) {
             throw new InvalidArgumentException("Input must be a non-negative integer.");
         }
